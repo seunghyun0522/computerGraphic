@@ -1,2 +1,30 @@
 전반부...  vertex shader.. 
 후반부...  fragement shader..
+
+지금까지 했던 것들은 고정된 것을 움직이는 것
+이제부터 matrix 변환을 공부할 예정
+- model view transformation
+  고정된 좌표 = world 좌표
+  카메라에 담긴 좌표 = screen 좌표
+  
+  step;
+  - Model & View Transform
+  Model Transform : local to world 
+  View Transform : world to camera 
+   
+  ProjectionTransform : camera to screen -> normalizing
+  
+  Matrix 4*4
+ -> Model- View -> Projection -> 
+ CTM : Current Transform Matrix
+  
+ x',y',z' = p(v(m(x,y,z,1)))
+ 
+ Matrix 로는 360도 카메라 같은것은 할 수 없다. ㅠ
+ Matrix 는 카메라의 각도와 구도정도만 설정할 수 있다. 
+ 
+ today 바람개비 만들기
+ 
+ instance Transformation : 여러개의 물체들을 만들어 조합시킴.  같은 물체는 여러개 복사 시킴(좌표만 바꿔서! 체스판을 생각)
+ instacing's basic : scaling -> rotation ->translation (순서가 중요! 순서에 따라... 모양이 바뀔수도 있음)
+ => 물체를 가져온다(방향을 맞추지는 않음) 
